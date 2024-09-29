@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "amon-view"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+keywords = []
+authors = [{ name = "ManMade2", email = "madskris@proton.me" }]
+classifiers = [
+   "Programming Language :: Python :: 3.12",
+   "Programming Language :: Python :: Implementation :: CPython",
+   "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["flask","pyinstaller", "pywebview", "watchdog", "livereload"]
+
+[project.urls]
+Documentation = "https://github.com/ManMade2/amon-view#readme"
+Issues = "https://github.com/ManMade2/amon-view/issues"
+Source = "https://github.com/ManMade2/amon-view"
+
+[tool.hatch.version]
+path = "src/amon_view/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = ["mypy>=1.0.0"]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/amon_view tests}"
+
+[tool.coverage.run]
+source_pkgs = ["amon_view", "tests"]
+branch = true
+parallel = true
+omit = ["src/amon_view/__about__.py"]
+
+[tool.coverage.paths]
+amon_view = ["src/amon_view", "*/amon-view/src/amon_view"]
+tests = ["tests", "*/amon-view/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]

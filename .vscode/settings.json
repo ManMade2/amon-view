@@ -1,0 +1,22 @@
+{
+    "cSpell.words": [
+        "subcontents"
+    ],
+    "python.analysis.extraPaths": [
+        "./src/amon_view"
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/*.css.map": true,
+        "build": true,
+        "dist": true,
+        ".vscode": true,
+        "LICENSE.txt": true,
+        "README.md": true
+    }
+}

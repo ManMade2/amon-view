@@ -1,0 +1,31 @@
+<input type="text" id="search-input" class="file-tree-search" placeholder="Search files or folders..." />
+
+<ul class="file-tree" id="fileTree">
+    {% for folder, contents in g.assets_structure.items() %}
+
+    {% if folder == "maps" %}
+      <li class="folder open">{{ folder }}
+
+    {% else %}
+      <li class="folder">{{ folder }}
+    {% endif %}
+      <ul class="file-tree">
+        {% for file in contents %}
+          {% if file is string %}
+            <li class="file" fileName="{{file}}">{{ file }}</li>
+          {% elif file is mapping %}
+            {% for subfolder, subcontents in file.items() %}
+              <li class="folder">{{ subfolder }}
+                <ul class="file-tree">
+                  {% for subfile in subcontents %}
+                    <li>{{ subfile }}</li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+</ul>
