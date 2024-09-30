@@ -1,0 +1,12 @@
+{% macro drawer(toggleText) %}
+<div class="drawer-container">
+    <label for="drawerToggle">
+        <input type="checkbox" id="drawerToggle">
+        {{toggleText}}
+    </label>
+
+    <div class="drawer">
+        {{ caller() }}  <!-- Render the content block passed by the caller -->
+    </div>
+</div>
+{% endmacro %}

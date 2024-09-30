@@ -15,4 +15,4 @@ if __name__ == '__main__':
     server.watch('*.py')  # Watch Python files too
 
     # Start the server
-    server.serve(port=5000, debug=True)
+    server.serve(port=5000, debug=True, restart_delay=10)

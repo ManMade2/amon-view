@@ -1,0 +1,11 @@
+{% macro button(label, url='#', css_class='btn-primary', js_attributes=None) %}
+    <a href="{{ url }}" class="btn {{ css_class }} input-base" 
+    {% if js_attributes %}
+        {% for attr, value in js_attributes.items() %}
+            {{ attr }}="{{ value }}"
+        {% endfor %}
+    {% endif %}
+    role="button">
+        {{label}}
+    </a>
+{% endmacro %}
