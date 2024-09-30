@@ -1,12 +1,9 @@
 {% from 'components/drawer.html' import drawer %}
-{% from 'components/button.html' import button %}
 
 
 <div class="side-bar">
     {% include 'components/file-tree.html' %}
-    {% call drawer('Debug') %}
-        <div class="component">
-            {{ button('Load Map', css_class='myButton', js_attributes={'onclick': 'console.log("click")'}) }}
-        </div> 
+    {% call drawer('Debug', "debugDrawer") %}
+
     {% endcall %}
 </div>

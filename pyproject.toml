@@ -16,7 +16,14 @@ classifiers = [
    "Programming Language :: Python :: Implementation :: CPython",
    "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = ["flask","pyinstaller", "pywebview", "watchdog", "livereload"]
+dependencies = [
+   "flask",
+   "pyinstaller",
+   "pywebview",
+   "watchdog",
+   "livereload",
+   "jsonschema",
+]
 
 [project.urls]
 Documentation = "https://github.com/ManMade2/amon-view#readme"

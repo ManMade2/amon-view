@@ -1,5 +1,5 @@
-{% macro drawer(toggleText) %}
-<div class="drawer-container">
+{% macro drawer(toggleText, id) %}
+<div id="{{id}}" class="drawer-container">
     <label for="drawerToggle">
         <input type="checkbox" id="drawerToggle">
         {{toggleText}}
